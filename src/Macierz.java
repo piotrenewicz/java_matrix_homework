@@ -36,7 +36,11 @@ public class Macierz {
         }
     }
 
-
+    public void element_multiply(Macierz other){
+        for(int i = 0; i < 9; i++){
+            this.data[i/3][i%3] += other.data[i/3][i%3];
+        }
+    }
 
 
 
