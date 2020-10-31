@@ -34,27 +34,31 @@ public class Macierz {
     }
 
     public Macierz copy(){ // zwraca kopie obencej macierzy
-        return new Macierz(this.data);
+        return new Macierz(
+                this.data[0].clone(),
+                this.data[1].clone(),
+                this.data[2].clone()
+        );
     }
 
-    public void scale(double scalar){ // mnoży wszystkie elementy macierzy przez skalar
+    public void _scale(double scalar){ // mnoży wszystkie elementy macierzy przez skalar
         for(int i = 0; i < 9; i++){
             this.data[i/3][i%3] *= scalar;
         }
     }
-    public void shift(double difference){ // dodaje jeden skalar do wszystkich elementów macierzy
+    public void _shift(double difference){ // dodaje jeden skalar do wszystkich elementów macierzy
         for(int i = 0; i < 9; i++){
             this.data[i/3][i%3] += difference;
         }
     }
 
-    public void element_multiply(Macierz other){ // mnoży elementy dwóch macierzy, bezpośrednio nakładając je na siebie.
+    public void _element_multiply(Macierz other){ // mnoży elementy dwóch macierzy, bezpośrednio nakładając je na siebie.
         for(int i = 0; i < 9; i++){
             this.data[i/3][i%3] *= other.data[i/3][i%3];
         }
     }
 
-    public void element_subtract(Macierz other){ // odejmuje elementy dwóch macierzy
+    public void _element_subtract(Macierz other){ // odejmuje elementy dwóch macierzy
         other = other.copy();
         other.scale(-1);
         this.dodawanie(other);
@@ -77,7 +81,7 @@ public class Macierz {
     // tomek
 
 //    Metoda sumuje elementy dwóch macierzy o współrzędnych i, j
-    public void dodawanie(Macierz diff) {
+    public void _dodawanie(Macierz diff) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 this.data[i][j] += diff.data[i][j];
@@ -88,7 +92,7 @@ public class Macierz {
 
     // konrad
 
-    public void transpose(){ //transpozycja macierzy
+    public void _transpose(){ //transpozycja macierzy
         double[][] aux = new double[3][3];
 
         for (int i=0; i<3; i++){
@@ -121,6 +125,44 @@ public class Macierz {
         napis.insert(napis.length()-3, "]");
         napis.deleteCharAt(napis.length()-3);
         return napis.toString();
+    }
+
+    // piotrek (przerzutki które nie niszczą obecnej macierzy)
+    public Macierz scale(double scalar){
+        Macierz copy = this.copy();
+        copy._scale(scalar);
+        return copy;
+    }
+
+    public Macierz shift(double difference){
+        Macierz copy = this.copy();
+        copy._shift(difference);
+        return copy;
+    }
+
+    public Macierz element_multiply(Macierz other){ // mnoży elementy dwóch macierzy, bezpośrednio nakładając je na siebie.
+        Macierz copy = this.copy();
+        copy._element_multiply(other);
+        return copy;
+    }
+
+    public Macierz element_subtract(Macierz other){ // odejmuje elementy dwóch macierzy
+        Macierz copy = this.copy();
+        copy._element_subtract(other);
+        return copy;
+    }
+
+    //    Metoda sumuje elementy dwóch macierzy o współrzędnych i, j
+    public Macierz dodawanie(Macierz diff) {
+        Macierz copy = this.copy();
+        copy._dodawanie(diff);
+        return copy;
+    }
+
+    public Macierz transpose(){ //transpozycja macierzy
+        Macierz copy = this.copy();
+        copy._transpose();
+        return copy;
     }
 
 }

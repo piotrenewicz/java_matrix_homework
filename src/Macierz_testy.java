@@ -42,7 +42,7 @@ public class Macierz_testy {
         Macierz copy_test_copied = copy_test_base.copy();
         System.out.println("Kopia macierzy:");
         System.out.println(copy_test_copied);
-        copy_test_base.scale(-1);
+        copy_test_base._scale(-1);
         System.out.println("Zmiana w macierzy bazowej:");
         System.out.println(copy_test_base);
         System.out.println("Kopia macierzy bazowej");
@@ -92,8 +92,9 @@ public class Macierz_testy {
         double[][] d = {{1, 3, 4}, {2,4,3}, {3, 4, 5}};
         Macierz matrix = new Macierz(d);
 
-        System.out.println(matrix); //matrix.transpose();
-        System.out.println(matrix.determinant());
+        System.out.println("Macierz:"); System.out.println(matrix);
+        System.out.println("Macierz transponowana:"); matrix.transpose(); System.out.println(matrix);
+        System.out.println("Wyznacznik macierzy: " + matrix.determinant());
 
 
 
