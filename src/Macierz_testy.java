@@ -58,7 +58,7 @@ public class Macierz_testy {
         Macierz scale_A = new Macierz(1,1,1,2,2,2,3,3,3);
         System.out.println("Macierz:");
         System.out.println(scale_A);
-        scale_A.scale(2);
+        scale_A._scale(2); //przykład użycia starej funkcji
         System.out.println("Macierz pomnożona przez 2");
         System.out.println(scale_A);
         System.out.println("--------------------------------------------");
