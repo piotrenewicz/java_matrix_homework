@@ -47,7 +47,7 @@ public class Macierz {
 
     // konrad
 
-    void transpose(){
+    public void transpose(){
         double[][] aux = new double[3][3];
 
         for (int i=0; i<3; i++){
