@@ -1,27 +1,27 @@
 public class Macierz {
     double[][] data = new double[3][3];
 
-    Macierz(){
+    Macierz(){ // konstruktor zerowy
         this(0);
     }
 
-    Macierz(double intial){
+    Macierz(double intial){ // konstruktor jednolity
         for(int i = 0; i < 9; i++){
             this.data[i/3][i%3] = intial;
         }
     }
 
-    Macierz(double[][] full_input){
+    Macierz(double[][] full_input){ // konstruktor całość na raz
         this.data = full_input;
     }
 
-    Macierz(double[] row1, double[] row2, double[] row3){
+    Macierz(double[] row1, double[] row2, double[] row3){ // konstruktor linia po linii
         this.data[0] = row1;
         this.data[1] = row2;
         this.data[2] = row3;
     }
 
-    Macierz(double a1, double a2, double a3,
+    Macierz(double a1, double a2, double a3, // konstruktor pełny, każdego elementu pojedyńczo
             double b1, double b2, double b3,
             double c1, double c2, double c3){
         this.data = new double[][]{
@@ -31,34 +31,34 @@ public class Macierz {
         };
     }
 
-    public Macierz copy(){
+    public Macierz copy(){ // zwraca kopie obencej macierzy
         return new Macierz(this.data);
     }
 
-    public void scale(double scalar){
+    public void scale(double scalar){ // mnoży wszystkie elementy macierzy przez skalar
         for(int i = 0; i < 9; i++){
             this.data[i/3][i%3] *= scalar;
         }
     }
-    public void shift(double difference){
+    public void shift(double difference){ // dodaje jeden skalar do wszystkich elementów macierzy
         for(int i = 0; i < 9; i++){
             this.data[i/3][i%3] += difference;
         }
     }
 
-    public void element_multiply(Macierz other){
+    public void element_multiply(Macierz other){ // mnoży elementy dwóch macierzy, bezpośrednio nakładając je na siebie.
         for(int i = 0; i < 9; i++){
             this.data[i/3][i%3] *= other.data[i/3][i%3];
         }
     }
 
-    public void element_subtract(Macierz other){
+    public void element_subtract(Macierz other){ // odejmuje elementy dwóch macierzy
         other = other.copy();
         other.scale(-1);
         this.dodawanie(other);
     }
 
-    public Macierz matrix_multiply(Macierz other){
+    public Macierz matrix_multiply(Macierz other){ // wykonuję mnożenie macierzy metodą kross product
         Macierz result = new Macierz(0);
         for(int x = 0; x < 3; x++){
             for(int y = 0; y < 3; y++){

@@ -1,5 +1,3 @@
-import javax.crypto.Mac;
-
 public class Macierz_testy {
 
     public static void main(String []args){
@@ -21,7 +19,7 @@ public class Macierz_testy {
         );
 
         Macierz result = dot_product_A.matrix_multiply(dot_product_B);
-        System.out.println(result);
+        System.out.println(result);  // check https://www.mathsisfun.com/algebra/images/matrix-multiply-c.svg
 
         // tomek
 
