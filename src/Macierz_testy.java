@@ -61,8 +61,7 @@ public class Macierz_testy {
         System.out.println("Macierz");
         System.out.println(shift_A);
         System.out.println("Dodanie skalara 2 do każdego elementu macierzy");
-        shift_A.shift(2);
-        System.out.println(shift_A);
+        System.out.println(shift_A.shift(2));
 
         System.out.println("Mnożenie macierzy 'bezpośrednio'");
 
