@@ -1,3 +1,5 @@
+import javax.crypto.Mac;
+
 public class Macierz_testy {
 
     public static void main(String []args){
@@ -23,6 +25,17 @@ public class Macierz_testy {
 
         // tomek
 
+        System.out.println("Dodawanie macierzy m1 oraz m2:");
+        Macierz m1, m2;
+        m1 = new Macierz(1,2,3,4,5,6,7,8,9);
+        m2 = new Macierz(9,8,7,6,5,4,3,2,1);
+        System.out.println("m1:");
+        System.out.println(m1);
+        System.out.println("m2:");
+        System.out.println(m2);
+        m1.dodawanie(m2);
+        System.out.println("Wynik dodawania:");
+        System.out.println(m1);
 
 
         // konrad
