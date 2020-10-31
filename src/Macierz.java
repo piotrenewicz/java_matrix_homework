@@ -89,7 +89,7 @@ public class Macierz {
 
     // konrad
 
-    public void transpose(){
+    public void transpose(){ //transpozycja macierzy
         double[][] aux = new double[3][3];
 
         for (int i=0; i<3; i++){
@@ -101,13 +101,13 @@ public class Macierz {
         data = aux;
     }
 
-    public double determinant(){
+    public double determinant(){ //obliczanie wyznaczika macierzy
         double det = (this.data[0][0] * this.data[1][1] * this.data[2][2]) + (this.data[1][0] * this.data[2][1] * this.data[0][2]) + (this.data[2][0] * this.data[0][1] * this.data[1][2]) - (this.data[0][2] * this.data[1][1] * this.data[2][0] + this.data[1][2] * this.data[2][1] * this.data[0][0] + this.data[2][2] * this.data[0][1] * this.data[1][0]);
 
         return det;
     }
 
-    public String toString(){
+    public String toString(){ //metoda reprezentacyjna obiekt macierzy jako napis (typ string)
         StringBuilder napis = new StringBuilder("[");
 
         for(int i=0; i < 3; i++){
