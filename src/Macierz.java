@@ -93,7 +93,7 @@ public class Macierz {
         for(int i=0; i < 3; i++){
             napis.append("[");
             for(int j = 0; j < 3; j++){
-                napis.append((this.data[i][j])).append(", ");
+                napis.append(this.data[i][j]).append(", ");
             }
             napis.insert(napis.length()-2,"]");
             napis.insert(napis.length()-1, "\n");
