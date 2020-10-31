@@ -21,6 +21,17 @@ public class Macierz {
         };
     }
 
+    public void scale(double scalar){
+        for(int i = 0; i < 9; i++){
+            this.data[i/3][i%3] *= scalar;
+        }
+    }
+    public void shift(double difference){
+        for(int i = 0; i < 9; i++){
+            this.data[i/3][i%3] += difference;
+        }
+    }
+
 
 
 
