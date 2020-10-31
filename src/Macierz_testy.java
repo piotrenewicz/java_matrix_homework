@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //Piotr Morel, Konrad Maciejczyk, Tomasz Tomżyński, Java, gr 2, 2020
+=======
+import javax.crypto.Mac;
+>>>>>>> 5ed2c7b57f6367004cf7540b242357900c1cd456
 
 public class Macierz_testy {
 
@@ -25,11 +29,30 @@ public class Macierz_testy {
 
         // tomek
 
+        System.out.println("Dodawanie macierzy m1 oraz m2:");
+        Macierz m1, m2;
+        m1 = new Macierz(1,2,3,4,5,6,7,8,9);
+        m2 = new Macierz(9,8,7,6,5,4,3,2,1);
+        System.out.println("m1:");
+        System.out.println(m1);
+        System.out.println("m2:");
+        System.out.println(m2);
+        m1.dodawanie(m2);
+        System.out.println("Wynik dodawania:");
+        System.out.println(m1);
 
+        System.out.println("Odejmowanie macierzy m1 oraz m2:");
+        System.out.println("m1:");
+        System.out.println(m1);
+        System.out.println("m2:");
+        System.out.println(m2);
+        m1.element_subtract(m2);
+        System.out.println("Wynik odejmowania:");
+        System.out.println(m1);
 
         // konrad
 
-        double d[][] = {{1, 3, 4}, {2,4,3}, {3, 4, 5}}; 
+        double[][] d = {{1, 3, 4}, {2,4,3}, {3, 4, 5}};
         Macierz matrix = new Macierz(d);
 
         System.out.println(matrix); //matrix.transpose();

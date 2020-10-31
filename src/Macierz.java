@@ -74,11 +74,14 @@ public class Macierz {
         return result;
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5ed2c7b57f6367004cf7540b242357900c1cd456
     // tomek
 
+//    Metoda sumuje elementy dwóch macierzy o współrzędnych i, j
     public void dodawanie(Macierz diff) {
-
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 this.data[i][j] += diff.data[i][j];
