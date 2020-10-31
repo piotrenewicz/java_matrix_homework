@@ -22,6 +22,18 @@ public class Macierz {
     }
 
 
+    void transpose(){
+        double[][] aux = new double[3][3];
+
+        for (int i=0; i<3; i++){
+            for (int j=0; j<3; j++){
+                aux[i][j] = this.data[j][i];
+            }
+        }
+
+        data = aux;
+    }
+
 
 
 
