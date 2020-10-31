@@ -1,3 +1,5 @@
+//Piotr Morel, Konrad Maciejczyk, Tomasz Tomżyński, Java, gr 2, 2020
+
 public class Macierz {
     double[][] data = new double[3][3];
 
@@ -73,9 +75,6 @@ public class Macierz {
     }
 
 
-
-
-
     // tomek
 
     public void dodawanie(Macierz diff) {
@@ -86,6 +85,7 @@ public class Macierz {
             }
         }
     }
+
 
     // konrad
 

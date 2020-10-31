@@ -1,3 +1,5 @@
+//Piotr Morel, Konrad Maciejczyk, Tomasz Tomżyński, Java, gr 2, 2020
+
 public class Macierz_testy {
 
     public static void main(String []args){
