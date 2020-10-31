@@ -37,6 +37,14 @@ public class Macierz_testy {
         System.out.println("Wynik dodawania:");
         System.out.println(m1);
 
+        System.out.println("Odejmowanie macierzy m1 oraz m2:");
+        System.out.println("m1:");
+        System.out.println(m1);
+        System.out.println("m2:");
+        System.out.println(m2);
+        m1.element_subtract(m2);
+        System.out.println("Wynik odejmowania:");
+        System.out.println(m1);
 
         // konrad
 
