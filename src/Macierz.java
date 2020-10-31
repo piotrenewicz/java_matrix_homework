@@ -99,7 +99,8 @@ public class Macierz {
             napis.insert(napis.length()-1, "\n");
         }
 
-        napis.insert(napis.length()-1, "]\n");
+        napis.insert(napis.length()-3, "]");
+        napis.deleteCharAt(napis.length()-3);
         return napis.toString();
     }
 
