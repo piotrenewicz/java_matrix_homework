@@ -58,6 +58,20 @@ public class Macierz {
         this.dodawanie(other);
     }
 
+    public Macierz matrix_multiply(Macierz other){
+        Macierz result = new Macierz(0);
+        for(int x = 0; x < 3; x++){
+            for(int y = 0; y < 3; y++){
+                double element = 0;
+                for(int z = 0; z < 3; z++){
+                    element += this.data[x][z] * other.data[z][y];
+                }
+                result.data[x][y] = element;
+            }
+        }
+        return result;
+    }
+
 
 
 
@@ -105,7 +119,8 @@ public class Macierz {
             napis.insert(napis.length()-1, "\n");
         }
 
-        napis.insert(napis.length()-1, "]\n");
+        napis.insert(napis.length()-3, "]");
+        napis.deleteCharAt(napis.length()-3);
         return napis.toString();
     }
 
