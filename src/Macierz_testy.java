@@ -12,7 +12,7 @@ public class Macierz_testy {
         Macierz m = new Macierz();
         System.out.println(m);
 
-        System.out.println("Iloczyn skalarny macierzy A i B");
+        System.out.println("Iloczyn wektorowy macierzy A i B");
         System.out.println("Macierz A:");
         Macierz dot_product_A = new Macierz(
                 1,2,3,
@@ -29,7 +29,7 @@ public class Macierz_testy {
         );
         System.out.println(dot_product_B);
 
-        System.out.println("Wynik iloczynu skalarnego");
+        System.out.println("Wynik iloczynu wektorowego");
         Macierz result = dot_product_A.matrix_multiply(dot_product_B);
         System.out.println(result);
 
@@ -47,6 +47,24 @@ public class Macierz_testy {
         System.out.println(copy_test_base);
         System.out.println("Kopia macierzy bazowej");
         System.out.println(copy_test_copied);
+
+        System.out.println("Mnożenie macierzy przez skalar");
+        Macierz scale_A = new Macierz(1,1,1,2,2,2,3,3,3);
+        System.out.println("Macierz:");
+        System.out.println(scale_A);
+        scale_A.scale(2);
+        System.out.println("Macierz pomnożona przez 2");
+        System.out.println(scale_A);
+
+        System.out.println("Dodawanie jednego skalara do wszystkich elementów macierzy");
+        Macierz shift_A = new Macierz(1,1,1,2,2,3,4,5,6);
+        System.out.println("Macierz");
+        System.out.println(shift_A);
+        System.out.println("Dodanie skalara 2 do każdego elementu macierzy");
+        shift_A.shift(2);
+        System.out.println(shift_A);
+
+        System.out.println("Mnożenie macierzy 'bezpośrednio'");
 
         System.out.println("Dodawanie macierzy m1 oraz m2:");
         Macierz m1, m2;
