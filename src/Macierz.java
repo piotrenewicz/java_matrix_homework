@@ -21,6 +21,10 @@ public class Macierz {
         };
     }
 
+    public Macierz copy(){
+        return new Macierz(this.data);
+    }
+
     public void scale(double scalar){
         for(int i = 0; i < 9; i++){
             this.data[i/3][i%3] *= scalar;
@@ -45,6 +49,13 @@ public class Macierz {
         data = aux;
     }
 
+
+    // tomek
+
+
+
+
+    // konrad
 
 
 
