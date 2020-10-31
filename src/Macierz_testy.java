@@ -56,18 +56,16 @@ public class Macierz_testy {
         System.out.println(m1);
         System.out.println("m2:");
         System.out.println(m2);
-        m1.dodawanie(m2);
         System.out.println("Wynik dodawania:");
-        System.out.println(m1);
+        System.out.println(m1.dodawanie(m2));
 
         System.out.println("Odejmowanie macierzy m1 oraz m2:");
         System.out.println("m1:");
         System.out.println(m1);
         System.out.println("m2:");
         System.out.println(m2);
-        m1.element_subtract(m2);
         System.out.println("Wynik odejmowania:");
-        System.out.println(m1);
+        System.out.println(m1.element_subtract(m2));
 
         // konrad
 
@@ -75,7 +73,7 @@ public class Macierz_testy {
         Macierz matrix = new Macierz(d);
 
         System.out.println("Macierz:"); System.out.println(matrix);
-        System.out.println("Macierz transponowana:"); matrix.transpose(); System.out.println(matrix);
+        System.out.println("Macierz transponowana:"); System.out.println(matrix.transpose());
         System.out.println("Wyznacznik macierzy: " + matrix.determinant());
 
 

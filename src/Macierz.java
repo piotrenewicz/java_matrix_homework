@@ -59,9 +59,7 @@ public class Macierz {
     }
 
     public void _element_subtract(Macierz other){ // odejmuje elementy dwóch macierzy
-        other = other.copy();
-        other.scale(-1);
-        this.dodawanie(other);
+        this._dodawanie(other.scale(-1));
     }
 
     public Macierz matrix_multiply(Macierz other){ // wykonuję mnożenie macierzy metodą kross product
