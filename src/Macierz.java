@@ -91,4 +91,18 @@ public class Macierz {
         data = aux;
     }
 
+    public String toString(){
+        String napis = "[";
+
+        for(int i=0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                napis = napis + Double.toString(this.data[i][j]) +", ";
+            }
+            napis = napis + "\n";
+        }
+
+        napis = napis + "]";
+        return napis;
+    }
+
 }
