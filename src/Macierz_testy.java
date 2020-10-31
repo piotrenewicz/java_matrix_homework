@@ -42,7 +42,7 @@ public class Macierz_testy {
         Macierz copy_test_copied = copy_test_base.copy();
         System.out.println("Kopia macierzy:");
         System.out.println(copy_test_copied);
-        copy_test_base.scale(-1);
+        copy_test_base._scale(-1);
         System.out.println("Zmiana w macierzy bazowej:");
         System.out.println(copy_test_base);
         System.out.println("Kopia macierzy bazowej");
