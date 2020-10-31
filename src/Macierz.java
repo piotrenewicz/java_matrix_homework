@@ -74,10 +74,6 @@ public class Macierz {
         return result;
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 5ed2c7b57f6367004cf7540b242357900c1cd456
     // tomek
 
 //    Metoda sumuje elementy dwóch macierzy o współrzędnych i, j
