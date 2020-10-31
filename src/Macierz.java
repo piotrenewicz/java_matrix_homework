@@ -101,6 +101,12 @@ public class Macierz {
         data = aux;
     }
 
+    public double determinant(){
+        double det = (this.data[0][0] * this.data[1][1] * this.data[2][2]) + (this.data[1][0] * this.data[2][1] * this.data[0][2]) + (this.data[2][0] * this.data[0][1] * this.data[1][2]) - (this.data[0][2] * this.data[1][1] * this.data[2][0] + this.data[1][2] * this.data[2][1] * this.data[0][0] + this.data[2][2] * this.data[0][1] * this.data[1][0]);
+
+        return det;
+    }
+
     public String toString(){
         StringBuilder napis = new StringBuilder("[");
 
