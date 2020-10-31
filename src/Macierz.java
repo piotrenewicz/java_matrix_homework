@@ -96,17 +96,18 @@ public class Macierz {
     }
 
     public String toString(){
-        String napis = "[";
+        StringBuilder napis = new StringBuilder("[\n");
 
         for(int i=0; i < 3; i++){
+            napis.append("[");
             for(int j = 0; j < 3; j++){
-                napis = napis + Double.toString(this.data[i][j]) +", ";
+                napis.append(Double.toString(this.data[i][j])).append(", ");
             }
-            napis = napis + "\n";
+            napis.append("\n");
         }
 
-        napis = napis + "]";
-        return napis;
+        napis.append("]");
+        return napis.toString();
     }
 
 }
