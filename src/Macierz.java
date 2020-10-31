@@ -44,8 +44,39 @@ public class Macierz {
 
 
 
+
+
     // tomek
 
+    void dodawanie(double[][] diff) {
+        double[][] C = new double[3][3];
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                C[i][j] = this.data[i][j] + diff[i][j];
+            }
+        }
+    }
+
+    void odejmowanie(double[][] diff) {
+        double[][] C = new double[3][3];
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                C[i][j] = this.data[i][j] - diff[i][j];
+            }
+        }
+    }
+
+    void mnozenie(double[][] diff) {
+        double[][] C = new double[3][3];
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                C[i][j] = this.data[i][j] * diff[i][j];
+            }
+        }
+    }
 
 
 
