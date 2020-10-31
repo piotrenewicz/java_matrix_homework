@@ -37,6 +37,16 @@ public class Macierz {
     }
 
 
+
+
+
+    // tomek
+
+
+
+
+    // konrad
+
     void transpose(){
         double[][] aux = new double[3][3];
 
@@ -48,15 +58,5 @@ public class Macierz {
 
         data = aux;
     }
-
-
-    // tomek
-
-
-
-
-    // konrad
-
-
 
 }
