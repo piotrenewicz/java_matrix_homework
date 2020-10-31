@@ -74,8 +74,9 @@ public class Macierz_testy {
         double[][] d = {{1, 3, 4}, {2,4,3}, {3, 4, 5}};
         Macierz matrix = new Macierz(d);
 
-        System.out.println(matrix); //matrix.transpose();
-        System.out.println(matrix.determinant());
+        System.out.println("Macierz:"); System.out.println(matrix);
+        System.out.println("Macierz transponowana:"); matrix.transpose(); System.out.println(matrix);
+        System.out.println("Wyznacznik macierzy: " + matrix.determinant());
 
 
 
