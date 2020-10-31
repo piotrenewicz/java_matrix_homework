@@ -64,7 +64,7 @@ public class Macierz {
 
     // tomek
 
-    void dodawanie(Macierz diff) {
+    public void dodawanie(Macierz diff) {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -72,14 +72,6 @@ public class Macierz {
             }
         }
     }
-
-//    void odejmowanie(Macierz diff) {
-//        diff.scale(-1);
-//
-//
-//
-//    }
-
 
     // konrad
 
