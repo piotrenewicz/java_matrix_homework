@@ -1,6 +1,16 @@
 public class Macierz {
     double[][] data = new double[3][3];
 
+    Macierz(){
+        this(0);
+    }
+
+    Macierz(double intial){
+        for(int i = 0; i < 9; i++){
+            this.data[i/3][i%3] = intial;
+        }
+    }
+
     Macierz(double[][] full_input){
         this.data = full_input;
     }
@@ -40,6 +50,12 @@ public class Macierz {
         for(int i = 0; i < 9; i++){
             this.data[i/3][i%3] *= other.data[i/3][i%3];
         }
+    }
+
+    public void element_subtract(Macierz other){
+        other = other.copy();
+        other.scale(-1);
+        this.dodawanie(other);
     }
 
 
