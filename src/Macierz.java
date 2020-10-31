@@ -36,18 +36,53 @@ public class Macierz {
         }
     }
 
+    public void element_multiply(Macierz other){
+        for(int i = 0; i < 9; i++){
+            this.data[i/3][i%3] *= other.data[i/3][i%3];
+        }
+    }
+
 
 
 
 
     // tomek
 
+    void dodawanie(double[][] diff) {
+        double[][] C = new double[3][3];
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                C[i][j] = this.data[i][j] + diff[i][j];
+            }
+        }
+    }
+
+    void odejmowanie(double[][] diff) {
+        double[][] C = new double[3][3];
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                C[i][j] = this.data[i][j] - diff[i][j];
+            }
+        }
+    }
+
+    void mnozenie(double[][] diff) {
+        double[][] C = new double[3][3];
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                C[i][j] = this.data[i][j] * diff[i][j];
+            }
+        }
+    }
 
 
 
     // konrad
 
-    void transpose(){
+    public void transpose(){
         double[][] aux = new double[3][3];
 
         for (int i=0; i<3; i++){
