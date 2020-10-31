@@ -49,16 +49,20 @@ public class Macierz {
     // tomek
 
     void dodawanie(Macierz diff) {
-        double[][] C = new double[3][3];
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                C[i][j] = this.data[i][j] + diff.data[i][j];
+                this.data[i][j] += diff.data[i][j];
             }
         }
     }
 
-
+//    void odejmowanie(Macierz diff) {
+//        diff.scale(-1);
+//
+//
+//
+//    }
 
 
     // konrad
