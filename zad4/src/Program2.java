@@ -58,37 +58,30 @@ class Prostokat2 extends Figura
         return "prostokat o wym. "+dlugosc+" na "+szerokosc;
     }
 }
-class Trapez extends  Figura
-//    trapez prostokatny
+// piotrek
+class Kwadrat extends Prostokat2
 {
-    double wysokosc;
-    double podstawa1;
-    double podstawa2;
-
-    Trapez(double wysokosc, double podstawa1, double podstawa2)
-    {
-        this.wysokosc = wysokosc;
-        this.podstawa1 = podstawa1;
-        this.podstawa2 = podstawa2;
-    }
-    double pole()
-    {
-        return ((podstawa1 + podstawa2) * wysokosc)/2;
+    double bok;
+    Kwadrat(double bok){
+        super(bok, bok);
+        this.bok = bok;
     }
 
-    double obwod()
-    {
-        double b = (podstawa2 - podstawa1) * (podstawa2 - podstawa1);
-        b += wysokosc * wysokosc;
-        b = Math.sqrt(b);
-        return wysokosc + podstawa1 + podstawa2 + b;
-    }
-
-    public String toString()
-    {
-        return "trapez o podstawach "+podstawa1+", "+podstawa2+" i wysokosci "+wysokosc;
+    public String toString(){
+        return "kwadrat o boku "+bok;
     }
 }
+
+
+//tomek
+
+
+
+
+//konrad
+
+
+
 public class Program2
 {
     public static void main(String[] args)
@@ -101,14 +94,10 @@ public class Program2
         Figura x;
         double suma=0;
 
-        Figura t=new Trapez(4, 2, 4);
-        t.info();
-
-        for(int i=0;i<a.length;i++)
-        {
-            x=a[i];
+        for (Figura figura : a) {
+            x = figura;
             x.info();
-            suma=suma+x.pole();
+            suma = suma + x.pole();
         }
 
         System.out.println("suma pol figur: "+suma);
