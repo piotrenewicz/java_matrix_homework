@@ -149,7 +149,7 @@ class Trojkat extends Figura{
 
     double pole(){
         if (is_possible()){
-            return (Math.sqrt(a + b + c)*(a + b - c)*(a - b + c)*(-a + b + c)) / 4;
+            return (Math.sqrt((a + b + c)*(a + b - c)*(a - b + c)*(-a + b + c))) / 4;
         }else{
             return -1;
         }
@@ -182,7 +182,7 @@ public class Program2
 
         System.out.println("suma pol figur: "+suma);
 
-        Trojkat triangle = new Trojkat(0, 0, 0, 20, 29, 0);
+        Trojkat triangle = new Trojkat(10, 10,  20, 150, 200, 80);
         System.out.println("Trojkat:" + triangle + ". Pole: " + triangle.pole() + ". Obwod: " + triangle.obwod());
         Figura t=new Trapez(6, 2, 4);
         t.info();
