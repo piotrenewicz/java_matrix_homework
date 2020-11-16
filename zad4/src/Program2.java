@@ -78,7 +78,37 @@ class Kwadrat extends Prostokat2
 
 
 //tomek
+class Trapez extends  Figura
+//    trapez prostokatny
+{
+    double wysokosc;
+    double podstawa1;
+    double podstawa2;
 
+    Trapez(double wysokosc, double podstawa1, double podstawa2)
+    {
+        this.wysokosc = wysokosc;
+        this.podstawa1 = podstawa1;
+        this.podstawa2 = podstawa2;
+    }
+    double pole()
+    {
+        return ((podstawa1 + podstawa2) * wysokosc)/2;
+    }
+
+    double obwod()
+    {
+        double b = (podstawa2 - podstawa1) * (podstawa2 - podstawa1);
+        b += wysokosc * wysokosc;
+        b = Math.sqrt(b);
+        return wysokosc + podstawa1 + podstawa2 + b;
+    }
+
+    public String toString()
+    {
+        return "trapez o podstawach "+podstawa1+", "+podstawa2+" i wysokosci "+wysokosc;
+    }
+}
 
 
 
@@ -156,5 +186,9 @@ public class Program2
 
         Trojkat triangle = new Trojkat(0, 0, 0, 20, 29, 0);
         System.out.println(triangle);
+        Figura t=new Trapez(6, 2, 4);
+        t.info();
+        System.out.println("Pole trapezu " + t.pole());
+        System.out.println("Obwod trapezu " + t.obwod());
     }
 }
