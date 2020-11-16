@@ -1,9 +1,15 @@
 import java.awt.Rectangle;
+import java.awt.Point;
+import java.awt.Dimension;
 class Prostokat extends Rectangle
 {
     Prostokat(int a,int b)
     {
         super(a,b);
+    }
+
+    Prostokat(Point wierzcholek, int szer, int dlug){
+        super(wierzcholek, new Dimension(szer, dlug));
     }
 
     void info()
