@@ -1,6 +1,8 @@
+import javax.sql.rowset.spi.TransactionalWriter;
+
 //import org.graalvm.compiler.core.common.alloc.Trace;
 
-abstract class Figura //nie mozna tworzyc instancji tej klasy 
+abstract class Figura //nie mozna tworzyc instancji tej klasy
 {
     abstract double pole(); //metoda abstrakcyjna
     abstract double obwod();
@@ -142,11 +144,7 @@ class Trojkat extends Figura{
     }
 
     boolean is_possible(){//nierownosc trojkata
-        if ((this.a+this.b > this.c) && (this.b+this.c > this.a) && (this.c+this.a > this.b)){
-            return true;
-        }else{
-            return false;
-        }
+        return (this.a + this.b > this.c) && (this.b + this.c > this.a) && (this.c + this.a > this.b);
     }
 
     double pole(){
@@ -185,7 +183,7 @@ public class Program2
         System.out.println("suma pol figur: "+suma);
 
         Trojkat triangle = new Trojkat(0, 0, 0, 20, 29, 0);
-        System.out.println(triangle);
+        System.out.println("Trojkat:" + triangle + ". Pole: " + triangle.pole() + ". Obwod: " + triangle.obwod());
         Figura t=new Trapez(6, 2, 4);
         t.info();
         System.out.println("Pole trapezu " + t.pole());
