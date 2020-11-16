@@ -1,7 +1,5 @@
 //Piotr Morel, Konrad Maciejczyk, Tomasz Tomżyński, Java, gr 2, 2020
 
-import javax.crypto.Mac;
-
 
 public class Macierz_testy {
 
