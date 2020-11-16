@@ -59,6 +59,28 @@ class Prostokat2 extends Figura
     }
 }
 
+
+// piotrek
+class Kwadrat extends Prostokat2
+{
+    double bok;
+    Kwadrat(double bok){
+        super(bok, bok);
+        this.bok = bok;
+    }
+
+    public String toString(){
+        return "kwadrat o boku "+bok;
+    }
+}
+
+
+//tomek
+
+
+
+
+//konrad
 class Trojkat extends Figura{
     double x1, y1, x2, y2, x3, y3;
     double a, b, c;
@@ -105,6 +127,7 @@ class Trojkat extends Figura{
 
 }
 
+
 public class Program2
 {
     public static void main(String[] args)
@@ -117,11 +140,10 @@ public class Program2
         Figura x;
         double suma=0;
 
-        for(int i=0;i<a.length;i++)
-        {
-            x=a[i];
+        for (Figura figura : a) {
+            x = figura;
             x.info();
-            suma=suma+x.pole();
+            suma = suma + x.pole();
         }
 
         System.out.println("suma pol figur: "+suma);
