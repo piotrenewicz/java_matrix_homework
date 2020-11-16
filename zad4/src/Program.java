@@ -15,11 +15,20 @@ class Prostokat extends Rectangle
         super(wierzcholek, new Dimension(szer, dlug));
     }
 
+    boolean Przylega(Prostokat other){
+        if (this.intersects(other)){
+            Dimension overlap = this.intersection(other).getSize();
+            return overlap.height * overlap.width == 0;
+        }
+        return false;
+    }
+
     void info()
     {
         System.out.println(this);
     }
 }
+
 public class Program
 {
     public static void main(String[] args)
@@ -30,8 +39,6 @@ public class Program
 
         Prostokat b=new Prostokat(2,2);
         b.info();
-
-
 
         if(a.intersects(b))
         {
