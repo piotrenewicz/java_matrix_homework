@@ -1,6 +1,6 @@
 //import org.graalvm.compiler.core.common.alloc.Trace;
 
-abstract class Figura //nie mozna tworzyc instancji tej klasy 
+abstract class Figura //nie mozna tworzyc instancji tej klasy
 {
     abstract double pole(); //metoda abstrakcyjna
     abstract double obwod();
@@ -142,11 +142,7 @@ class Trojkat extends Figura{
     }
 
     boolean is_possible(){//nierownosc trojkata
-        if ((this.a+this.b > this.c) && (this.b+this.c > this.a) && (this.c+this.a > this.b)){
-            return true;
-        }else{
-            return false;
-        }
+        return (this.a + this.b > this.c) && (this.b + this.c > this.a) && (this.c + this.a > this.b);
     }
 
     double pole(){
