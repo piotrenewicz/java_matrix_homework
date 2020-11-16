@@ -1,7 +1,3 @@
-import javax.sql.rowset.spi.TransactionalWriter;
-
-//import org.graalvm.compiler.core.common.alloc.Trace;
-
 abstract class Figura //nie mozna tworzyc instancji tej klasy 
 {
     abstract double pole(); //metoda abstrakcyjna
