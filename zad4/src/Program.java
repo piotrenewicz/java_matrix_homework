@@ -5,6 +5,7 @@ class Prostokat extends Rectangle
 {
     Prostokat(int a,int b)
     {
+        //konstruktory nadklasy sa dziedziczone
         //slowo super odwoluje sie bezposrednio do klasy rodzica.
         //super() uzywa sie do wywolywania nadpisanych metod rodzica w klasie 
         //potomka
