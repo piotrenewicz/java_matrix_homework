@@ -1,3 +1,5 @@
+import javax.sql.rowset.spi.TransactionalWriter;
+
 //import org.graalvm.compiler.core.common.alloc.Trace;
 
 abstract class Figura //nie mozna tworzyc instancji tej klasy
@@ -181,7 +183,7 @@ public class Program2
         System.out.println("suma pol figur: "+suma);
 
         Trojkat triangle = new Trojkat(0, 0, 0, 20, 29, 0);
-        System.out.println(triangle);
+        System.out.println("Trojkat:" + triangle + ". Pole: " + triangle.pole() + ". Obwod: " + triangle.obwod());
         Figura t=new Trapez(6, 2, 4);
         t.info();
         System.out.println("Pole trapezu " + t.pole());
