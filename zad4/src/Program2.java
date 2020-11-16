@@ -58,6 +58,53 @@ class Prostokat2 extends Figura
         return "prostokat o wym. "+dlugosc+" na "+szerokosc;
     }
 }
+
+class Trojkat extends Figura{
+    double x1, y1, x2, y2, x3, y3;
+    double a, b, c;
+
+    Trojkat(double x1, double y1, double x2, double y2, double x3, double y3){
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
+        this.x3 = x3;
+        this.y3 = y3;
+
+        this.a = distance(x1, y1, x2, y2);
+        this.b = distance(x2, y2, x3, y3);
+        this.c = distance(x1, y1, x3, y3);
+    }
+
+    double distance(double x1, double y1, double x2, double y2){
+        double d = Math.pow((x2 - x1),2) + Math.pow((y1 - y2), 2);
+        d = sqrt(d);
+
+        return d;
+    }
+
+    double obwod(){
+        return this.a + this.b + this.c;
+    }
+
+    boolean is_possible(){//nierownosc trojkata
+        if ((this.a+this.b > this.c) && (this.b+this.c > this.a) && (this.c+this.a > this.b)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    double pole(){
+        if (is_possible){
+            return (Math.sqrt(a + b + c)*(a + b - c)*(a - b + c)*(-a + b + c)) / 4;
+        }else{
+            return -1;
+        }
+    }
+
+}
+
 public class Program2
 {
     public static void main(String[] args)
