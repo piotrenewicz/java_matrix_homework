@@ -1,3 +1,5 @@
+//import org.graalvm.compiler.core.common.alloc.Trace;
+
 abstract class Figura //nie mozna tworzyc instancji tej klasy 
 {
     abstract double pole(); //metoda abstrakcyjna
@@ -100,7 +102,7 @@ class Trojkat extends Figura{
 
     double distance(double x1, double y1, double x2, double y2){
         double d = Math.pow((x2 - x1),2) + Math.pow((y1 - y2), 2);
-        d = sqrt(d);
+        d = Math.sqrt(d);
 
         return d;
     }
@@ -118,11 +120,15 @@ class Trojkat extends Figura{
     }
 
     double pole(){
-        if (is_possible){
+        if (is_possible()){
             return (Math.sqrt(a + b + c)*(a + b - c)*(a - b + c)*(-a + b + c)) / 4;
         }else{
             return -1;
         }
+    }
+
+    public String toString(){
+        return "Trojkat(" + this.a + ", " + this.b + ", " + this.c +")";
     }
 
 }
@@ -147,5 +153,8 @@ public class Program2
         }
 
         System.out.println("suma pol figur: "+suma);
+
+        Trojkat triangle = new Trojkat(0, 0, 0, 20, 29, 0);
+        System.out.println(triangle);
     }
 }
