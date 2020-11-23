@@ -27,14 +27,20 @@ abstract class Dokument implements Przeszukiwalne
 }
 class Paszport extends Dokument
 {
+    Osoba wlasciciel;
+    String typ;
     public boolean czyPasuje(String wzorzec)
     {
-        return false;
+        return wzorzec.equalsIgnoreCase(this.wlasciciel.nazwisko);
+    }
+    public Paszport(Osoba w) {
+        this.typ = "Paszport";
+        this.wlasciciel = w;
     }
 
     public String toString()
     {
-        return "";
+        return this.typ +" "+ this.wlasciciel.toString();
     }
 }
 class DowodOsobisty extends Dokument
@@ -59,7 +65,7 @@ public class Program10
         Osoba X = new Osoba("Edyta", "Gorniak", 1700);
         Osoba Y = new Osoba("Kamil", "Górny", 1234);
 
-        Dokument[] bazaDanych={new Paszport(),new DowodOsobisty(),new Paszport()};
+        Dokument[] bazaDanych={new Paszport(W),new DowodOsobisty(),new Paszport(Y)};
 
         Dokument z;
         String wzorzec="Gorniak";
