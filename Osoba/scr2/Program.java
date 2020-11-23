@@ -78,7 +78,11 @@ public class Program
             outp.writeObject(z);
             outp.close();
         }
-        catch(Exception e){System.out.println(e);}
+        catch(Exception e){System.out.println(e);
+            if(e.getClass() == FileNotFoundException.class){
+                System.out.println("No such file");
+            }
+        }
 
 
 
@@ -93,6 +97,10 @@ public class Program
             inp.close();
             x.info();
         }
-        catch(Exception e){System.out.println(e);}
+        catch(Exception e){System.out.println(e);
+            if(e.getClass() == FileNotFoundException.class){
+                System.out.println("No such file");
+            }
+        }
     }
 }
