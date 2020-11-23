@@ -55,6 +55,10 @@ public class Program10
 {
     public static void main(String[] args)
     {
+        Osoba W = new Osoba("Jan", "Kowalski", 1800);
+        Osoba X = new Osoba("Edyta", "Gorniak", 1700);
+        Osoba Y = new Osoba("Kamil", "Górny", 1234);
+
         Dokument[] bazaDanych={new Paszport(),new DowodOsobisty(),new Paszport()};
 
         Dokument z;
