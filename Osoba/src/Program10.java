@@ -12,85 +12,58 @@ class Osoba implements Serializable
         this.rokUrodzenia=rokUrodzenia;
     }
 
-    Osoba(BufferedReader br)
-    {
-        try
-        {
-            System.out.print("imie: ");
-            this.imie=br.readLine();
-
-            System.out.print("nazwisko: ");
-            this.nazwisko=br.readLine();
-
-            System.out.print("rok urodzenia: ");
-            this.rokUrodzenia=Integer.parseInt(br.readLine());
-        }
-        catch(IOException e){}
-    }
-
     public String toString()
     {
         return this.imie+" "+this.nazwisko+" "+this.rokUrodzenia;
     }
 }
-class DowodOsobisty implements Serializable
+interface Przeszukiwalne
 {
-    Osoba posiadacz;
-    String numer;
+    boolean czyPasuje(String wzorzec);
+}
+abstract class Dokument implements Przeszukiwalne
+{
 
-    DowodOsobisty(BufferedReader br)
+}
+class Paszport extends Dokument
+{
+    public boolean czyPasuje(String wzorzec)
     {
-        try
-        {
-            this.posiadacz=new Osoba(br);
-
-            System.out.print("numer do: ");
-            this.numer=br.readLine();
-        }
-        catch(IOException e){}
+        return false;
     }
 
     public String toString()
     {
-        return "<do:> "+posiadacz.toString()+" "+this.numer;
-    }
-
-    void info()
-    {
-        System.out.println(this);
+        return "";
     }
 }
+class DowodOsobisty extends Dokument
+{
+    public boolean czyPasuje(String wzorzec)
+    {
+        return false;
+    }
+
+    public String toString()
+    {
+        return "";
+    }
+}
+
+
 public class Program10
 {
     public static void main(String[] args)
     {
-        System.out.println("-- do zapisu --");
-        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        Dokument[] bazaDanych={new Paszport(),new DowodOsobisty(),new Paszport()};
 
-        DowodOsobisty z=new DowodOsobisty(br);
-        z.info();
+        Dokument z;
+        String wzorzec="Gorniak";
 
-        try
+        for(int i=0;i<bazaDanych.length;i++)
         {
-            ObjectOutputStream outp=new ObjectOutputStream(new FileOutputStream("plik.dat"));
-            outp.writeObject(z);
-            outp.close();
+            z=bazaDanych[i];
+            if(z.czyPasuje(wzorzec))System.out.println("znaleziono: "+z);
         }
-        catch(Exception e){System.out.println(e);}
-
-
-
-        System.out.println("\n-- z pliku --");
-        ObjectInputStream inp;
-
-        try
-        {
-            inp=new ObjectInputStream(new FileInputStream("plik.dat"));
-            Object o=inp.readObject();
-            DowodOsobisty x=(DowodOsobisty)o;
-            inp.close();
-            x.info();
-        }
-        catch(Exception e){System.out.println(e);}
     }
 }
