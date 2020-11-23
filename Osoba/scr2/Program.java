@@ -1,4 +1,6 @@
 import java.io.*;
+import java.io.Serializable;
+
 class Osoba implements Serializable
 {
     String imie;
