@@ -45,14 +45,20 @@ class Paszport extends Dokument
 }
 class DowodOsobisty extends Dokument
 {
+    Osoba wlasciciel;
+    String typ;
     public boolean czyPasuje(String wzorzec)
     {
-        return false;
+        return wzorzec.equalsIgnoreCase(this.wlasciciel.nazwisko);
+    }
+    public DowodOsobisty(Osoba w) {
+        this.typ = "Dowod";
+        this.wlasciciel = w;
     }
 
     public String toString()
     {
-        return "";
+        return this.typ +" "+ this.wlasciciel.toString();
     }
 }
 
@@ -65,7 +71,7 @@ public class Program10
         Osoba X = new Osoba("Edyta", "Gorniak", 1700);
         Osoba Y = new Osoba("Kamil", "Górny", 1234);
 
-        Dokument[] bazaDanych={new Paszport(W),new DowodOsobisty(),new Paszport(Y)};
+        Dokument[] bazaDanych={new Paszport(W),new DowodOsobisty(X),new Paszport(Y)};
 
         Dokument z;
         String wzorzec="Gorniak";
