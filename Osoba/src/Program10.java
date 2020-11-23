@@ -1,5 +1,5 @@
 import java.io.*;
-class Osoba implements Serializable
+class Osoba
 {
     String imie;
     String nazwisko;
@@ -17,14 +17,17 @@ class Osoba implements Serializable
         return this.imie+" "+this.nazwisko+" "+this.rokUrodzenia;
     }
 }
+
 interface Przeszukiwalne
 {
     boolean czyPasuje(String wzorzec);
 }
+
 abstract class Dokument implements Przeszukiwalne
 {
 
 }
+
 class Paszport extends Dokument
 {
     Osoba wlasciciel;
@@ -43,6 +46,7 @@ class Paszport extends Dokument
         return this.typ +" "+ this.wlasciciel.toString();
     }
 }
+
 class DowodOsobisty extends Dokument
 {
     Osoba wlasciciel;
@@ -76,10 +80,9 @@ public class Program10
         Dokument z;
         String wzorzec="Gorniak";
 
-        for(int i=0;i<bazaDanych.length;i++)
-        {
-            z=bazaDanych[i];
-            if(z.czyPasuje(wzorzec))System.out.println("znaleziono: "+z);
+        for (Dokument danych : bazaDanych) {
+            z = danych;
+            if (z.czyPasuje(wzorzec)) System.out.println("znaleziono: " + z);
         }
     }
 }
