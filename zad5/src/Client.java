@@ -19,12 +19,14 @@ public class Client
         PrintWriter outp;
         outp=new PrintWriter(sock.getOutputStream());
 
-        //komunikacja - czytanie danych z klawiatury i przekazywanie ich do strumienia
-        System.out.print("<Wysylamy:> ");
-        String str=klaw.readLine();
-        outp.println(str);
-        outp.flush();
-
+        String str = "";
+        do {
+            //komunikacja - czytanie danych z klawiatury i przekazywanie ich do strumienia
+            System.out.print("<Wysylamy:> ");
+            str = klaw.readLine();
+            outp.println(str);
+            outp.flush();
+        }while (!str.equals("end"));
         //zamykanie polaczenia
         klaw.close();
         outp.close();

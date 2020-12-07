@@ -23,9 +23,10 @@ public class Serwer
 
         //komunikacja - czytanie danych ze strumienia
         String str;
-        str=inp.readLine();
-        System.out.println("<Nadeszlo:> " + str);
-
+        do {
+            str = inp.readLine();
+            System.out.println("<Nadeszlo:> " + str);
+        }while (!str.equals("end"));
         //zamykanie polaczenia
         inp.close();
         sock.close();
