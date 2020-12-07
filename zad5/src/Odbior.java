@@ -27,7 +27,7 @@ public class Odbior extends Thread
                     this.alive=false;
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("Połączenie zakończone.");
             }
         }
     }
