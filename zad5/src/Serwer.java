@@ -20,12 +20,21 @@ public class Serwer
         //tworzenie strumienia danych pobieranych z gniazda sieciowego
         BufferedReader inp;
         inp=new BufferedReader(new InputStreamReader(sock.getInputStream()));
+        BufferedReader klaw;
+        klaw=new BufferedReader(new InputStreamReader(System.in));
+        PrintWriter outp;
+        outp=new PrintWriter(sock.getOutputStream());
+
 
         //komunikacja - czytanie danych ze strumienia
         String str;
         do {
             str = inp.readLine();
             System.out.println("<Nadeszlo:> " + str);
+            System.out.print("<Wysylamy:> ");
+            str = klaw.readLine();
+            outp.println(str);
+            outp.flush();
         }while (!str.equals("end"));
         //zamykanie polaczenia
         inp.close();

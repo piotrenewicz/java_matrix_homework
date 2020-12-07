@@ -18,6 +18,8 @@ public class Client
         klaw=new BufferedReader(new InputStreamReader(System.in));
         PrintWriter outp;
         outp=new PrintWriter(sock.getOutputStream());
+        BufferedReader inp;
+        inp=new BufferedReader(new InputStreamReader(sock.getInputStream()));
 
         String str = "";
         do {
@@ -26,6 +28,8 @@ public class Client
             str = klaw.readLine();
             outp.println(str);
             outp.flush();
+            str = inp.readLine();
+            System.out.println("<Nadeszlo:> " + str);
         }while (!str.equals("end"));
         //zamykanie polaczenia
         klaw.close();
