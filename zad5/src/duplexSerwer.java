@@ -18,12 +18,24 @@ public class duplexSerwer
         sock=serv.accept();
         System.out.println("Jest polaczenie: "+sock);
 
-        //tworzenie watka odbierajacego
-        new Odbior(sock).start();
+        BufferedReader klaw;
+        klaw=new BufferedReader(new InputStreamReader(System.in));
+        PrintWriter outp;
+        outp=new PrintWriter(sock.getOutputStream());
 
+        //tworzenie watka odbierajacego
+        Odbior rcv = new Odbior(sock);
+        rcv.start();
+        String str;
+        do{
+            str = klaw.readLine();
+            outp.println(str);
+            outp.flush();
+        }while(!str.equals("end") && rcv.alive);
 
 
         //zamykanie polaczenia
+        rcv.end();
         serv.close();
         sock.close();
     }
