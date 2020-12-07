@@ -15,12 +15,25 @@ public class duplexClient
         sock=new Socket(HOST,PORT);
         System.out.println("Nawiazalem polaczenie: "+sock);
 
+        BufferedReader klaw;
+        klaw=new BufferedReader(new InputStreamReader(System.in));
+        PrintWriter outp;
+        outp=new PrintWriter(sock.getOutputStream());
+
         //tworzenie watka odbierajacego
-        new Odbior(sock).start();
+        Odbior rcv = new Odbior(sock);
+        rcv.start();
+        String str;
+        do{
+            str = klaw.readLine();
+            outp.println(str);
+            outp.flush();
+        }while(!str.equals("end") && rcv.alive);
 
 
 
         //zamykanie polaczenia
+        rcv.end();
         sock.close();
     }
 }
