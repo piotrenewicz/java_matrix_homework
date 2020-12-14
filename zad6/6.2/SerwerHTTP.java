@@ -41,6 +41,12 @@ public class SerwerHTTP
                 outp.writeBytes("HTTP/1.1 501 Not supported.\r\n");
             }
 
+            System.out.println(request);
+            while(inp.ready()){
+                request = inp.readLine();
+                System.out.println(request);
+            }
+
             //zamykanie strumieni
             inp.close();
             outp.close();
