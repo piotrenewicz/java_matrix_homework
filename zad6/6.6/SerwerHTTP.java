@@ -3,7 +3,7 @@ import java.net.*;
 
 public class SerwerHTTP
 {
-    static String nazwaPliku = "zad6/index.html";
+    static String nazwaPliku = "zad6/5image.html";
     public static void main(String[] args) throws IOException
     {
         ServerSocket serv=new ServerSocket(8080);
