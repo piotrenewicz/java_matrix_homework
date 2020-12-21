@@ -108,7 +108,7 @@ public class SerwerHTTP
         BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
         ServerSocket server = null;
         Socket clientSocket;
-
+        System.out.println("Running in path: "+System.getProperty("user.dir"));
         if (args.length == 0){
             System.out.println("Specify port number");
             System.out.print("PORT: ");
