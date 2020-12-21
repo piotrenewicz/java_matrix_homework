@@ -33,12 +33,14 @@ class ObslugaZadania extends Thread
                 SerwerHTTP.LogWriter.flush();
             }
             String[] splitted = request.split("\\s+");
-            System.out.println(splitted);
-            String fn = splitted[1].replace("/", "");
-            if (fn.equals("")) {
+//            System.out.println(splitted[1]);
+            String fn  = splitted[1];
+//            String fn = splitted[1].replace("/", "");
+
+            if (fn.equals("/")) {
                 this.get_file("zad6/5image.html");
             } else {
-                this.get_file("zad6/"+fn);
+                this.get_file("zad6"+fn);
             }
 
         }
@@ -140,7 +142,7 @@ public class SerwerHTTP
         }
 
         while(true){
-            System.out.println("Waiting for connection...");
+//            System.out.println("Waiting for connection...");
             clientSocket=server.accept();
             new ObslugaZadania(clientSocket).start();
         }
