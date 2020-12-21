@@ -33,11 +33,12 @@ class ObslugaZadania extends Thread
                 SerwerHTTP.LogWriter.flush();
             }
             String[] splitted = request.split("\\s+");
+            System.out.println(splitted);
             String fn = splitted[1].replace("/", "");
             if (fn.equals("")) {
-                this.get_file("5image.html");
+                this.get_file("zad6/5image.html");
             } else {
-                this.get_file(fn);
+                this.get_file("zad6/"+fn);
             }
 
         }
@@ -63,6 +64,7 @@ class ObslugaZadania extends Thread
         FileInputStream file;
         try{
             file = new FileInputStream(fn);
+            System.out.println("sending file: "+ fn);
             int contentLength = file.available();
             String extension = getExtension(fn);
             String contentType = "";
