@@ -17,6 +17,7 @@ class ObslugaZadania extends Thread
         this.client=clientSocket;
         //Strumien
         this.in = this.client.getInputStream();
+        this.out = this.client.getOutputStream();
         this.Receiver = new BufferedReader(new InputStreamReader(in));
         this.Sender = new DataOutputStream(out);
     }
